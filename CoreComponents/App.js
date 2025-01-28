@@ -1,18 +1,28 @@
+import { StatusBar } from "expo-status-bar";
+import { useState } from "react";
 import {
   View,
   Text,
-  Image,
   ImageBackground,
   ScrollView,
   Button,
   Pressable,
+  Modal,
+  ActivityIndicator,
 } from "react-native";
-const logoImage = require("./assets/favicon.png");
 
 export default function App() {
+  const [isVisibleModal, setIsVisibleModal] = useState(false);
+
   return (
     <View style={{ flex: 1, backgroundColor: "#fff", padding: 20 }}>
+      <StatusBar />{" "}
+      {/* Controls the status bar (with time, battery icon, WiFi icon and all) of the application */}
       <ScrollView>
+        <ActivityIndicator />{" "}
+        <ActivityIndicator size="large" />{" "}
+        <ActivityIndicator size="large" color="red" />{" "}
+        {/* Displays circular loading indicator for loading processes (loading an app, submitting a form, saving updates) */}
         <View
           style={{
             display: "flex",
@@ -20,11 +30,15 @@ export default function App() {
             alignItems: "center",
             padding: 5,
           }}
-        >
-          <Pressable onPress={() => {
-            console.log("Pressed!!");
-            
-          }}>
+        > {/* Basic react native component for creating layouts */}
+          <Pressable
+            onPress={() => {
+              console.log("Short Pressed!!");
+            }}
+            onLongPress={() => {
+              console.log("Long Pressed!!");
+            }}
+          >
             <ImageBackground
               style={{ width: 200, height: 200 }}
               source={{
@@ -38,6 +52,34 @@ export default function App() {
               alert("Black abstract picture");
             }}
           />
+
+          {/* MODAL COMPONENT */}
+          <View>
+            <Button
+              title="Show modal"
+              onPress={() => setIsVisibleModal(true)}
+            />
+            <Modal
+              visible={isVisibleModal}
+              onRequestClose={() => setIsVisibleModal(false)}
+              animationType="slide"
+              presentationStyle="formSheet"
+            >
+              <View
+                style={{
+                  flex: 1,
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Text>This is a modal</Text>
+                <Button
+                  title="Close modal"
+                  onPress={() => setIsVisibleModal(false)}
+                />
+              </View>
+            </Modal>
+          </View>
         </View>
         <Text
           style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
