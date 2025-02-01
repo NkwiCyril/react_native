@@ -16,12 +16,12 @@ export default function App() {
 
   return (
     <View style={{ flex: 1, backgroundColor: "#fff", padding: 20 }}>
-      <StatusBar />{" "}
+      <StatusBar />
       {/* Controls the status bar (with time, battery icon, WiFi icon and all) of the application */}
       <ScrollView>
-        <ActivityIndicator />{" "}
-        <ActivityIndicator size="large" />{" "}
-        <ActivityIndicator size="large" color="red" />{" "}
+        {/* <ActivityIndicator />
+        <ActivityIndicator size="large" />
+        <ActivityIndicator size="large" color="red" /> */}
         {/* Displays circular loading indicator for loading processes (loading an app, submitting a form, saving updates) */}
         <View
           style={{
@@ -30,7 +30,7 @@ export default function App() {
             alignItems: "center",
             padding: 5,
           }}
-        > {/* Basic react native component for creating layouts */}
+        > 
           <Pressable
             onPress={() => {
               console.log("Short Pressed!!");
@@ -125,8 +125,7 @@ export default function App() {
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
           sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet{" "}
-          <Text style={{ color: "red", fontSize: "17" }}>clita</Text> kasd
+          rebum. Stet kasd
           gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
