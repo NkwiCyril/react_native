@@ -5,11 +5,13 @@ import {
   View,
   StatusBar,
   FlatList,
+  ActivityIndicator,
   Text,
 } from "react-native";
 
 export default function App() {
   const [postList, setPostList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   // GET request
   const fetchData = async (limit) => {
@@ -18,12 +20,24 @@ export default function App() {
     );
     const data = await response.json();
     setPostList(data);
+    setIsLoading(false);
   };
 
   // we need the fetchData method to be called when the component mounts
   useEffect(() => {
     fetchData(30);
   }, []);
+
+  if(isLoading) {
+    return (
+      <SafeAreaView style={styles.loadingContainer}>
+        <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+          <ActivityIndicator size="large" color="#000"/>
+          <Text>Loading...</Text>
+        </View>
+      </SafeAreaView>
+    )
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -51,6 +65,7 @@ export default function App() {
               Posts
             </Text>
           }
+          
         />
       </View>
     </SafeAreaView>
@@ -62,6 +77,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f5f5f5",
     paddingTop: StatusBar.currentHeight,
+  },
+
+  loadingContainer: {
+    flex: 1,
+    backgroundColor: "#f5f5f5",
+    paddingTop: StatusBar.currentHeight,
+    justifyContent: "center",
+    alignItems: "center",
   },
 
   listContainer: {
