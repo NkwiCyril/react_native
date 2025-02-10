@@ -12,6 +12,7 @@ import {
 export default function App() {
   const [postList, setPostList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [refresh, setRefresh] = useState(false);
 
   // GET request
   const fetchData = async (limit) => {
@@ -25,7 +26,7 @@ export default function App() {
 
   // we need the fetchData method to be called when the component mounts
   useEffect(() => {
-    fetchData(30);
+    fetchData(2);
   }, []);
 
   if(isLoading) {
@@ -65,7 +66,12 @@ export default function App() {
               Posts
             </Text>
           }
-          
+          refreshing={refresh}
+          onRefresh={() => {
+            setRefresh(true);
+            fetchData(30);
+            setRefresh(false);
+          }}
         />
       </View>
     </SafeAreaView>
