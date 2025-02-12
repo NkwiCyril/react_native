@@ -1,11 +1,18 @@
-import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { Text } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from './screens/HomeScreen';
+import DetailsScreen from './screens/DetailsScreen';
+import { StatusBar } from 'react-native';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Text style={{ marginTop: 200, color: "white" }}>Hello world</Text>
+    <NavigationContainer>         
+      <Stack.Navigator initialRouteName='Home' >
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
