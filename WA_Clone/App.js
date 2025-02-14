@@ -1,20 +1,145 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from "react-native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
+import { Colors } from "./constants/colors";
+import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import CallsScreen from "./screens/CallsScreen";
+import UpdatesScreen from "./screens/UpdatesScreen";
+import ToolsScreen from "./screens/ToolsScreen";
+import ChatsStack from "./stacks/ChatsStack";
+import IconHighlight from "./components/IconHighlight";
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Tab.Navigator
+        screenOptions={{
+          tabBarStyle: {
+            backgroundColor: Colors.darkBackground,
+            borderColor: Colors.darkBackground,
+            // borderWidth: 1,
+            elevation: 20,
+            height: 70,
+          },
+          tabBarIconStyle: {
+            color: Colors.backgroundWhite,
+            marginBottom: 5,
+          },
+          tabBarLabelStyle: {
+            color: Colors.backgroundWhite,
+            fontSize: 13,
+          },
+        }}
+      >
+        <Tab.Screen
+          name="Chats"
+          component={ChatsStack}
+          options={{
+            headerShown: false,
+            tabBarIcon: ({ focused }) =>
+              focused ? (
+                <IconHighlight>
+                  <MaterialCommunityIcons
+                    name={
+                      focused
+                        ? "message-reply-text"
+                        : "message-reply-text-outline"
+                    }
+                    color={"white"}
+                    size={25}
+                  />
+                </IconHighlight>
+              ) : (
+                <MaterialCommunityIcons
+                  name={
+                    focused
+                      ? "message-reply-text"
+                      : "message-reply-text-outline"
+                  }
+                  color={"white"}
+                  size={25}
+                />
+              ),
+          }}
+        />
+        <Tab.Screen
+          name="Calls"
+          component={CallsScreen}
+          options={{
+            tabBarIcon: ({ focused }) =>
+              focused ? (
+                <IconHighlight>
+                  <MaterialCommunityIcons
+                    name={focused ? "phone" : "phone-outline"}
+                    color={"white"}
+                    size={25}
+                  />
+                </IconHighlight>
+              ) : (
+                <MaterialCommunityIcons
+                  name={focused ? "phone" : "phone-outline"}
+                  color={"white"}
+                  size={25}
+                />
+              ),
+          }}
+        />
+        <Tab.Screen
+          name="Updates"
+          component={UpdatesScreen}
+          options={{
+            tabBarIcon: ({ focused }) =>
+              focused ? (
+                <IconHighlight>
+                  <Ionicons
+                    name={focused ? "chatbubble" : "chatbubble-outline"}
+                    color={"white"}
+                    size={25}
+                  />
+                </IconHighlight>
+              ) : (
+                <Ionicons
+                  name={focused ? "chatbubble" : "chatbubble-outline"}
+                  color={"white"}
+                  size={25}
+                />
+              ),
+          }}
+        />
+        <Tab.Screen
+          name="Tools"
+          component={ToolsScreen}
+          options={{
+            tabBarIcon: ({ focused }) =>
+              focused ? (
+                <IconHighlight>
+                  <MaterialCommunityIcons
+                    name={focused ? "store" : "store-outline"}
+                    color={"white"}
+                    size={25}
+                  />
+                </IconHighlight>
+              ) : (
+                <MaterialCommunityIcons
+                  name={focused ? "store" : "store-outline"}
+                  color={"white"}
+                  size={25}
+                />
+              ),
+          }}
+        />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  tabBarStyle: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
