@@ -18,7 +18,7 @@ const ChatsStack = () => {
     <Stack.Navigator
       screenOptions={{
         title: "",
-        header: () => <CustomHeader title="WhatsApp" rightIcons={rightIcons} />,
+        header: () => <CustomHeader title="CyrixWhatsApp" rightIcons={rightIcons} />,
       }}
     >
       <Stack.Screen name="CyrixWhatsApp" component={ChatsScreen} />
