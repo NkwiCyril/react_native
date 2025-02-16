@@ -3,11 +3,12 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { Colors } from "./constants/colors";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
-import CallsScreen from "./screens/CallsScreen";
-import UpdatesScreen from "./screens/UpdatesScreen";
-import ToolsScreen from "./screens/ToolsScreen";
+import UpdatesStack from "./stacks/UpdatesStack";
 import ChatsStack from "./stacks/ChatsStack";
+import CallsStack from "./stacks/CallsStack";
+import ToolsStack from "./stacks/ToolsStack";
 import IconHighlight from "./components/IconHighlight";
+
 
 const Tab = createBottomTabNavigator();
 
@@ -19,7 +20,6 @@ export default function App() {
           tabBarStyle: {
             backgroundColor: Colors.darkBackground,
             borderColor: Colors.darkBackground,
-            // borderWidth: 1,
             elevation: 20,
             height: 70,
           },
@@ -66,8 +66,9 @@ export default function App() {
         />
         <Tab.Screen
           name="Calls"
-          component={CallsScreen}
+          component={CallsStack}
           options={{
+            headerShown: false,
             tabBarIcon: ({ focused }) =>
               focused ? (
                 <IconHighlight>
@@ -88,8 +89,9 @@ export default function App() {
         />
         <Tab.Screen
           name="Updates"
-          component={UpdatesScreen}
+          component={UpdatesStack}
           options={{
+            headerShown: false,
             tabBarIcon: ({ focused }) =>
               focused ? (
                 <IconHighlight>
@@ -110,8 +112,9 @@ export default function App() {
         />
         <Tab.Screen
           name="Tools"
-          component={ToolsScreen}
+          component={ToolsStack}
           options={{
+            headerShown: false,
             tabBarIcon: ({ focused }) =>
               focused ? (
                 <IconHighlight>

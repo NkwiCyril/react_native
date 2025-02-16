@@ -1,16 +1,14 @@
 import { StyleSheet, View } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import ChatsScreen from "../screens/ChatsScreen";
-import CustomHeader from "../components/Chats/CustomHeader";
 import { Colors } from "../constants/colors";
+import CustomHeader from "../components/Chats/CustomHeader";
+import ToolsScreen from "../screens/ToolsScreen";
 
 const Stack = createNativeStackNavigator();
 
-const ChatsStack = () => {
+const ToolsStack = () => {
   const rightIcons = [
-    { name: "camera-outline" },
-    { name: "search-outline" },
-    { name: "ellipsis-vertical" },
+    { name: "hammer" },
   ];
 
   return (
@@ -18,11 +16,11 @@ const ChatsStack = () => {
       screenOptions={{
         title: "",
         header: () => (
-          <CustomHeader title="WhatsApp" rightIcons={rightIcons} />
+          <CustomHeader title="Tools" rightIcons={rightIcons} />
         ),
       }}
     >
-      <Stack.Screen name="Chats" component={ChatsScreen} />
+      <Stack.Screen name="Tools" component={ToolsScreen} />
     </Stack.Navigator>
   );
 };
@@ -36,4 +34,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ChatsStack;
+export default ToolsStack;

@@ -1,5 +1,5 @@
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
-import { Colors } from "../constants/colors";
+import { Colors } from "../../constants/colors";
 import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 import ProfilePic from "./ProfilePic";
 

@@ -1,10 +1,10 @@
 import { StyleSheet, View, FlatList, ScrollView, Text } from "react-native";
 import { Colors } from "../constants/colors";
 import { categories, chats } from "../data";
-import { Ionicons } from "@expo/vector-icons";
-import Notification from "../components/Notification";
-import Category from "../components/Category";
-import ChatItem from "../components/ChatItem";
+import Notification from "../components/Chats/Notification";
+import Category from "../components/Chats/Category";
+import ChatItem from "../components/Chats/ChatItem";
+import BottomMessage from "../components/Chats/BottomMessage";
 
 const ChatsScreen = () => {
   return (
@@ -42,15 +42,7 @@ const ChatsScreen = () => {
               />
             );
           })}
-          <View style={styles.bottom}>
-            <Ionicons name="lock-closed" color={"gray"} size={12} />
-            <Text style={styles.bottomText}>
-              Your personal messages are{" "}
-              <Text style={{ color: Colors.whatsAppGreen }}>
-                end-to-end encrypted
-              </Text>
-            </Text>
-          </View>
+          <BottomMessage />
         </ScrollView>
       </View>
     </View>
@@ -70,21 +62,6 @@ const styles = StyleSheet.create({
   verticalScrollView: {
     paddingVertical: 15,
     marginHorizontal: 10,
-  },
-
-  bottom: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 10,
-    marginHorizontal: 10,
-    marginBottom: 10,
-    gap: 2,
-  },
-
-  bottomText: {
-    color: "gray",
-    fontSize: 12,
   },
 });
 

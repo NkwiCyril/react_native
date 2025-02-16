@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, View, Text, Pressable } from "react-native";
-import { Colors } from "../constants/colors";
+import { Colors } from "../../constants/colors";
 import { Ionicons } from "@expo/vector-icons";
 
 const Notification = () => {

@@ -2,7 +2,7 @@
 import React from "react";
 import { View, Text, StyleSheet, SafeAreaView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { Colors } from "../constants/colors";
+import { Colors } from "../../constants/colors";
 
 const CustomHeader = ({ title, rightIcons }) => {
   return (

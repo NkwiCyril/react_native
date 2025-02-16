@@ -1,13 +1,19 @@
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text } from "react-native";
+import { Colors } from "../constants/colors";
 
 const ToolsScreen = () => {
-    return (
-        <View>
-            <Text>This is the tools screen</Text>
-        </View>
-    );
-}
+  return (
+    <View style={styles.container}>
+      
+    </View>
+  );
+};
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: Colors.darkBackground,
+  },
+});
 
 export default ToolsScreen;
