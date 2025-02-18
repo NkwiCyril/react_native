@@ -20,7 +20,7 @@ const ToolsStack = () => {
         ),
       }}
     >
-      <Stack.Screen name="Tools" component={ToolsScreen} />
+      <Stack.Screen name="ToolsScreen" component={ToolsScreen} />
     </Stack.Navigator>
   );
 };

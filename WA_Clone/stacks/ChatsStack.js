@@ -22,7 +22,7 @@ const ChatsStack = () => {
         ),
       }}
     >
-      <Stack.Screen name="Chats" component={ChatsScreen} />
+      <Stack.Screen name="ChatsScreen" component={ChatsScreen} />
     </Stack.Navigator>
   );
 };

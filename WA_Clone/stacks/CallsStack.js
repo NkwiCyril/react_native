@@ -20,7 +20,7 @@ const CallsStack = () => {
         ),
       }}
     >
-      <Stack.Screen name="Calls" component={CallsScreen} />
+      <Stack.Screen name="CallsScreen" component={CallsScreen} />
     </Stack.Navigator>
   );
 };

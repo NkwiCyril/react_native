@@ -20,7 +20,7 @@ const UpdatesStack = () => {
         ),
       }}
     >
-      <Stack.Screen name="Updates" component={UpdatesScreen} />
+      <Stack.Screen name="UpdatesScreen" component={UpdatesScreen} />
     </Stack.Navigator>
   );
 };
