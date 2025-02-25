@@ -13,4 +13,5 @@ export const Colors = {
   iconHightlight: "#242625",
   dpBackground: "#607982",
   dpIcon: "#cfd7dc",
+  metaIcon: "#1f272a"
 };

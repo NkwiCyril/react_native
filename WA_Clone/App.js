@@ -44,8 +44,8 @@ export default function App() {
                   <MaterialCommunityIcons
                     name={
                       focused
-                        ? "message-reply-text"
-                        : "message-reply-text-outline"
+                        ? "message-text"
+                        : "message-text-outline"
                     }
                     color={"white"}
                     size={25}
@@ -62,6 +62,12 @@ export default function App() {
                   size={25}
                 />
               ),
+              tabBarBadge: '99+',
+              tabBarBadgeStyle: {
+                backgroundColor: Colors.whatsAppGreen,
+                marginRight: -20,
+                fontSize: 12,
+              },
           }}
         />
         <Tab.Screen
@@ -108,6 +114,13 @@ export default function App() {
                   size={25}
                 />
               ),
+              tabBarBadge: '',
+              tabBarBadgeStyle: {
+                backgroundColor: Colors.whatsAppGreen,
+                borderRadius: 50,
+                marginRight: -10,
+              },
+  
           }}
         />
         <Tab.Screen
@@ -131,6 +144,11 @@ export default function App() {
                   size={25}
                 />
               ),
+              tabBarBadge: '',
+              tabBarBadgeStyle: {
+                backgroundColor: Colors.whatsAppGreen,
+                marginRight: -9,
+              },
           }}
         />
       </Tab.Navigator>

@@ -30,12 +30,12 @@ export const categories = [
     color: "lightblue",
     label: true,
   },
-  {
-    id: 6,
-    name: "Project",
-    color: "#FFA500",
-    label: true,
-  },
+  // {
+  //   id: 6,
+  //   name: "Project",
+  //   color: "#FFA500",
+  //   label: true,
+  // },
 ];
 
 export const chats = [
@@ -163,10 +163,10 @@ export const chats = [
     lastMessage: "Next book is '1984' by George Orwell",
     lastMessageDatetime: "1/17/25",
     unreadMessages: 0,
-    group: true,
+    group: false,
     icon: "person",
     community: false,
-    single: false,
+    single: true,
     isPinned: false,
     isMuted: false,
   },

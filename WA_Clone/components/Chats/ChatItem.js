@@ -125,9 +125,10 @@ const styles = StyleSheet.create({
 
   unreadMessages: {
     backgroundColor: Colors.whatsAppGreen,
-    borderRadius: 100,
-    width: 20,
+    borderRadius: 50,
+    width: 'auto',
     height: 20,
+    paddingHorizontal: 5,
     justifyContent: "center",
     alignItems: "center",
   },
