@@ -238,3 +238,87 @@ export const chats = [
     isMuted: true,
   },
 ];
+
+
+export const calls = [
+  {
+    id: "1",
+    name: "John Doe",
+    profilePic: "https://randomuser.me/api/portraits/men/1.jpg",
+    callType: "incoming", // outgoing, missed
+    callTime: "Today, 10:45 AM",
+    isVideoCall: false,
+  },
+  {
+    id: "2",
+    name: "Jane Smith",
+    profilePic: "https://randomuser.me/api/portraits/women/2.jpg",
+    callType: "missed",
+    callTime: "Yesterday, 6:30 PM",
+    isVideoCall: true,
+  },
+  {
+    id: "3",
+    name: "Alex Johnson",
+    profilePic: "https://randomuser.me/api/portraits/men/3.jpg",
+    callType: "outgoing",
+    callTime: "Yesterday, 3:15 PM",
+    isVideoCall: false,
+  },
+  {
+    id: "4",
+    name: "Emily Brown",
+    profilePic: "https://randomuser.me/api/portraits/women/4.jpg",
+    callType: "incoming",
+    callTime: "Monday, 9:00 AM",
+    isVideoCall: true,
+  },
+  {
+    id: "5",
+    name: "Emily Brown",
+    profilePic: "https://randomuser.me/api/portraits/women/4.jpg",
+    callType: "incoming",
+    callTime: "Monday, 9:00 AM",
+    isVideoCall: true,
+  },
+  {
+    id: "6",
+    name: "Emily Brown",
+    profilePic: "https://randomuser.me/api/portraits/women/4.jpg",
+    callType: "incoming",
+    callTime: "Monday, 9:00 AM",
+    isVideoCall: true,
+  },
+  {
+    id: "7",
+    name: "Emily Brown",
+    profilePic: "https://randomuser.me/api/portraits/women/4.jpg",
+    callType: "incoming",
+    callTime: "Monday, 9:00 AM",
+    isVideoCall: true,
+  },
+  {
+    id: "8",
+    name: "Emily Brown",
+    profilePic: "https://randomuser.me/api/portraits/women/4.jpg",
+    callType: "incoming",
+    callTime: "Monday, 9:00 AM",
+    isVideoCall: true,
+  },
+  {
+    id: "9",
+    name: "Emily Brown",
+    profilePic: "https://randomuser.me/api/portraits/women/4.jpg",
+    callType: "incoming",
+    callTime: "Monday, 9:00 AM",
+    isVideoCall: true,
+  },
+  {
+    id: "10",
+    name: "Emily Brown",
+    profilePic: "https://randomuser.me/api/portraits/women/4.jpg",
+    callType: "incoming",
+    callTime: "Monday, 9:00 AM",
+    isVideoCall: true,
+  },
+];

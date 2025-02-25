@@ -18,58 +18,62 @@ const ChatItem = ({
       <Pressable>
         <ProfilePic image={profilePic} icon={icon} />
       </Pressable>
-      <View style={styles.contentContainer}>
-        <View style={styles.topSection}>
-          <Text numberOfLines={1} ellipsizeMode="tail" style={styles.title}>
-            {title}
-          </Text>
-          {unreadMessages > 0 ? (
-            <Text
-              style={[
-                styles.lastMessageDatetime,
-                { color: Colors.whatsAppGreen },
-              ]}
-            >
-              {lastMessageDatetime}
+      <Pressable style={styles.contentContainer} onPress={() => {
+        alert(title)
+      }}>
+        <View>
+          <View style={styles.topSection}>
+            <Text numberOfLines={1} ellipsizeMode="tail" style={styles.title}>
+              {title}
             </Text>
-          ) : (
-            <Text style={styles.lastMessageDatetime}>
-              {lastMessageDatetime}
-            </Text>
-          )}
-        </View>
-        <View style={styles.bottomSection}>
-          <Text
-            numberOfLines={1}
-            ellipsizeMode="tail"
-            style={styles.lastMessage}
-          >
-            {lastMessage}
-          </Text>
-          <View
-            style={{
-              flexDirection: "row",
-              gap: 2,
-            }}
-          >
-            {(isPinned && (
-              <MaterialCommunityIcons name="pin" size={20} color={"gray"} />
-            )) ||
-              (isMuted && (
-                <MaterialIcons
-                  name="notifications-off"
-                  size={20}
-                  color={"gray"}
-                />
-              ))}
-            {unreadMessages > 0 && (
-              <View style={styles.unreadMessages}>
-                <Text>{unreadMessages}</Text>
-              </View>
+            {unreadMessages > 0 ? (
+              <Text
+                style={[
+                  styles.lastMessageDatetime,
+                  { color: Colors.whatsAppGreen },
+                ]}
+              >
+                {lastMessageDatetime}
+              </Text>
+            ) : (
+              <Text style={styles.lastMessageDatetime}>
+                {lastMessageDatetime}
+              </Text>
             )}
           </View>
+          <View style={styles.bottomSection}>
+            <Text
+              numberOfLines={1}
+              ellipsizeMode="tail"
+              style={styles.lastMessage}
+            >
+              {lastMessage}
+            </Text>
+            <View
+              style={{
+                flexDirection: "row",
+                gap: 2,
+              }}
+            >
+              {(isPinned && (
+                <MaterialCommunityIcons name="pin" size={20} color={"gray"} />
+              )) ||
+                (isMuted && (
+                  <MaterialIcons
+                    name="notifications-off"
+                    size={20}
+                    color={"gray"}
+                  />
+                ))}
+              {unreadMessages > 0 && (
+                <View style={styles.unreadMessages}>
+                  <Text>{unreadMessages}</Text>
+                </View>
+              )}
+            </View>
+          </View>
         </View>
-      </View>
+      </Pressable>
     </View>
   );
 };
@@ -126,7 +130,7 @@ const styles = StyleSheet.create({
   unreadMessages: {
     backgroundColor: Colors.whatsAppGreen,
     borderRadius: 50,
-    width: 'auto',
+    width: "auto",
     height: 20,
     paddingHorizontal: 5,
     justifyContent: "center",

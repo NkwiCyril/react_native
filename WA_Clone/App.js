@@ -62,10 +62,10 @@ export default function App() {
                   size={25}
                 />
               ),
-              tabBarBadge: '99+',
+              tabBarBadge: '9',
               tabBarBadgeStyle: {
                 backgroundColor: Colors.whatsAppGreen,
-                marginRight: -20,
+                marginRight: -10,
                 fontSize: 12,
               },
           }}
