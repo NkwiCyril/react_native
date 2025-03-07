@@ -13,7 +13,11 @@ const SignUp = () => {
     password: "",
   });
 
-  const signUpOnPress = async () => {};
+  const onSignUpPress = async () => {
+
+    
+
+  };
 
   return (
     <ScrollView className="flex-1 bg-white">
@@ -57,7 +61,7 @@ const SignUp = () => {
           <CustomButton
             title="Sign Up"
             onPress={() => {
-              signUpOnPress;
+              onSignUpPress;
             }}
             className="mt-6"
           />
